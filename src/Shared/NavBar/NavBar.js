@@ -4,13 +4,19 @@ import logo from "../../Asset/favicon.svg";
 const NavBar = () => {
   const menuList = (
     <>
-      <li className="mr-8 font-bold text-green-700">Home</li>
-      <li className="mr-8 font-bold text-green-700">Services</li>
-      <li className="mr-8 font-bold text-green-700">Blogs</li>
+      <li className="mr-5 font-bold text-green-700">
+        <Link to="/">Home</Link>
+      </li>
+      <li className="mr-5 font-bold text-green-700">
+        <Link to="/">Services</Link>
+      </li>
+      <li className="mr-5 font-bold text-green-700">
+        <Link to="/">Blogs</Link>
+      </li>
     </>
   );
   return (
-    <div className="navbar bg-fuchsia-500">
+    <div className="navbar bg-fuchsia-500 container mx-auto">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -45,7 +51,9 @@ const NavBar = () => {
         <ul className="menu menu-horizontal p-0">{menuList}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Get started</a>
+        <Link to="/" className="btn">
+          Get started
+        </Link>
       </div>
     </div>
   );

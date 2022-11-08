@@ -3,7 +3,7 @@ import logo from "../../Asset/favicon.svg";
 const Footer = () => {
   return (
     <div className="relative">
-      <footer className="footer footer-center p-10 bg-fuchsia-500 text-primary-content fixed bottom-0">
+      <footer className="footer footer-center container mx-auto p-12 sm: bg-fuchsia-500 text-primary-content sticky top-[100vh]">
         <div>
           <img src={logo} alt="" srcset="" />
           <p className="font-bold">
@@ -14,7 +14,7 @@ const Footer = () => {
           <p>Copyright © 2022 - All right reserved</p>
         </div>
         <div>
-          <div className="grid grid-flow-col gap-4">
+          <div className="grid lg:grid-flow-col grid-flow-row gap-4">
             <a href="/">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
