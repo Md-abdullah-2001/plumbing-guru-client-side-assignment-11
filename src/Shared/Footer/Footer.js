@@ -5,7 +5,7 @@ const Footer = () => {
     <div className="relative">
       <footer className="footer footer-center container mx-auto p-12 sm: bg-fuchsia-500 text-primary-content sticky top-[100vh]">
         <div>
-          <img src={logo} alt="" srcset="" />
+          <img src={logo} alt="" srcSet="" />
           <p className="font-bold">
             Plumbing Guru
             <br />

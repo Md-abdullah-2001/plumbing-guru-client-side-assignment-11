@@ -8,10 +8,10 @@ const NavBar = () => {
         <Link to="/">Home</Link>
       </li>
       <li className="mr-5 font-bold text-green-700">
-        <Link to="/">Services</Link>
+        <Link to="/services">Services</Link>
       </li>
       <li className="mr-5 font-bold text-green-700">
-        <Link to="/">Blogs</Link>
+        <Link to="/blogs">Blogs</Link>
       </li>
     </>
   );
@@ -42,7 +42,7 @@ const NavBar = () => {
             {menuList}
           </ul>
         </div>
-        <img src={logo} alt="" srcset="" />
+        <img src={logo} alt="" srcSet="" />
         <Link to="/" className="btn btn-ghost normal-case text-xl">
           Plumbing-Guru
         </Link>
