@@ -1,0 +1,51 @@
+[
+   
+    {
+    
+    "service_id": "01",
+    "title": "Repairing",
+    "img": "https://i.ibb.co/DYV46Ny/download-2.jpg",
+    "price": "400.00",
+    "description": "Among the items that a I can expertly install, repair, and replace are toilets, kitchen and bathroom sinks, showers, tubs, faucets, dishwasher, water heater, washer for laundry, pipes, water lines, backflow protection, and septic tank systems. As a result , You get an adequate potable water supply system; a safe, adequate drainage system; and ample fixtures and equipment"
+    },
+    {
+    
+    "service_id": "02",
+    "title": "Motor Repair",
+    "img": "https://i.ibb.co/xzjwLGY/download-4.jpg",
+    "price": "380.00",
+    "description": " I can repair the water lines and taps sanitary pipes which is equipped to repair a motor that is done by a motor mechanic, So, that is also an advantage you get from my Motor repairing services."
+    },
+    {
+    
+    "service_id": "03",
+    "title": "Residential plumbing",
+    "img": "https://i.ibb.co/cCSSN12/images.jpg",
+    "price": "3000.00",
+    "description": "In this Residential plumbing service I cover everything that involves indoor and outdoor water supply, pipes, and vents found in the home. Services start from the basic unclogging of drains and repairing or replacing leaky pipes to the more complicated sewer stoppage cleaning and water heater repairs. It is more ideal package for people wanting residential help in their plumbing issues."
+    },
+    {
+        
+        "service_id": "04",
+        "title": " Full Plumbing",
+        "img": "https://i.ibb.co/YfmjtKB/sigmund-4-CNNH2-KEjhc-unsplash-1.jpg",
+        "price": "5000.00",
+        "description": "In full package of Plumbing Services You get the design, installation, construction, replacement, service, repair, alteration, or modification of the pipes, fixtures, and other apparatus used for bringing the water supply into a building and removing liquid and water-carried wastes from a building. I'll make sure you get everything done by choosing this package as it is also a ideal package for someone who is wanting everything related to plumbing in his house  "
+        },
+    {
+        
+        "service_id": "05",
+        "title": "Installation",
+        "img": "https://i.ibb.co/wBHp1hd/battlecreek-coffee-roasters-Nf-G4r-Xmce-FM-unsplash.jpg",
+        "price": "200.00",
+        "description": "In Plumbing Installation  you will get installation that conveys, or controls the conveyance of, water but does not include anything connected to, extending or situated beyond the outlet from a fixture, fitting or pressurised line. If you're in need of installation or you're facing trouble to install the pipe or any plumbing machinethen this is the perfect package for you."
+        },
+    {
+    
+    "service_id": "06",
+    "title": "Commercial plumbing",
+    "img": "https://i.ibb.co/26N5XwW/download-5.jpg",
+    "price": "4000.00",
+    "description": "  As an  plumber I'm also have  expertise in  commercial plumbing which specializes in servicing plumbing fixtures in a variety of different commercial business settings. This can range from: -Basic office buildings. -Large scale commercial. If you are an industry Head , need plumbing in your industry then thatis perfect service I provide. "
+    }
+    ]
