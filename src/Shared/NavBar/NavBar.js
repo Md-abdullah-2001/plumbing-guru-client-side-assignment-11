@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../Asset/favicon.svg";
+import { AuthContext } from "../Auth/AuthProvider";
 const NavBar = () => {
+  const { user, logout } = useContext(AuthContext);
+  console.log(user);
+
+  const handleLogout = () => {
+    logout().then().catch();
+  };
   const menuList = (
     <>
       <li className="mr-5 font-bold text-green-700">
@@ -51,9 +58,32 @@ const NavBar = () => {
         <ul className="menu menu-horizontal p-0">{menuList}</ul>
       </div>
       <div className="navbar-end">
-        <Link to="/" className="btn">
-          Get started
-        </Link>
+        {user?.uid ? (
+          <>
+            <button
+              className="mr-5 font-bold text-green-700"
+              onClick={handleLogout}
+            >
+              Logout
+            </button>
+            <h4 className="mr-4">{user.displayName}</h4>
+            <img
+              className="w-12 h-12 mr-5 rounded-full"
+              src={user.photoURL}
+              alt=""
+              srcset=""
+            />
+          </>
+        ) : (
+          <ul className="flex">
+            <li className="mr-5 font-bold text-green-700">
+              <Link to="/login">Login</Link>
+            </li>
+            <li className="mr-5 font-bold text-green-700">
+              <Link to="/signup">SignUp</Link>
+            </li>
+          </ul>
+        )}
       </div>
     </div>
   );

@@ -3,6 +3,8 @@ import Details from "../Components/Details/Details";
 import Home from "../Components/Home/Home";
 import Services from "../Components/Services/Services";
 import Main from "../Main/Main";
+import Login from "../Shared/Auth/Login/Login";
+import SignUp from "../Shared/Auth/SignUp/SignUp";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -23,6 +25,8 @@ const router = createBrowserRouter([
         element: <Details></Details>,
       },
       { path: "/services", element: <Services></Services> },
+      { path: "/login", element: <Login></Login> },
+      { path: "/signup", element: <SignUp></SignUp> },
     ],
   },
 ]);
