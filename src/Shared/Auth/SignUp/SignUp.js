@@ -33,9 +33,9 @@ const SignUp = () => {
   };
 
   return (
-    <div className="hero p-5 w-full my-5">
+    <div className="hero p-5 w-full mb-5">
       <div className="hero-content ">
-        <div className="card  w-full max-w-sm shadow-2xl bg-base-100">
+        <div className="card mb-5 w-96  shadow-2xl bg-base-100">
           <form onSubmit={handleSignup} className="card-body">
             <h1 className="text-5xl font-bold">SignUp</h1>
             <div className="form-control">

@@ -39,7 +39,7 @@ const Login = () => {
   return (
     <div className="hero p-5 w-full my-5">
       <div className="hero-content ">
-        <div className="card  w-full max-w-sm shadow-2xl bg-base-100">
+        <div className="card  w-96  shadow-2xl bg-base-100">
           <form onSubmit={handleLogin} className="card-body">
             <h1 className="text-5xl font-bold">Login now!</h1>
             <div className="form-control">

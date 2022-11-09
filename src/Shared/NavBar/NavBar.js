@@ -71,7 +71,7 @@ const NavBar = () => {
               className="w-12 h-12 mr-5 rounded-full"
               src={user.photoURL}
               alt=""
-              srcset=""
+              srcSet=""
             />
           </>
         ) : (
