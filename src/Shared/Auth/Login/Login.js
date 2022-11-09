@@ -1,9 +1,12 @@
+import { GoogleAuthProvider } from "firebase/auth";
 import React, { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider";
+import { FaGoogle } from "react-icons/fa";
 
+const provider = new GoogleAuthProvider();
 const Login = () => {
-  const { logIn } = useContext(AuthContext);
+  const { logIn, googleProvider } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/";
@@ -23,6 +26,16 @@ const Login = () => {
       })
       .catch((error) => console.error(error));
   };
+
+  const signInSubmitGoogle = () => {
+    googleProvider(provider)
+      .then((result) => {
+        const user = result.user;
+        navigate(from, { replace: true });
+      })
+      .catch((error) => console.error(error));
+  };
+
   return (
     <div className="hero p-5 w-full my-5">
       <div className="hero-content ">
@@ -50,11 +63,6 @@ const Login = () => {
                 placeholder="password"
                 className="input input-bordered"
               />
-              <label className="label">
-                <a href="/" className="label-text-alt link link-hover">
-                  Forgot password?
-                </a>
-              </label>
             </div>
             <div className="form-control mt-6">
               <input
@@ -69,6 +77,17 @@ const Login = () => {
                 </Link>
               </p>
             </div>
+
+            <button
+              onClick={signInSubmitGoogle}
+              className="btn btn-outline btn-info"
+            >
+              {" "}
+              <span className="flex items-center   gap-2">
+                {" "}
+                <FaGoogle></FaGoogle> Sign in with Google
+              </span>
+            </button>
           </form>
         </div>
       </div>
