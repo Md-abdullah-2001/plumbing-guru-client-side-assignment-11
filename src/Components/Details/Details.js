@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
+
 import Review from "./Review/Review";
+import ShowReviews from "./Review/ShowReviews";
 
 const Details = () => {
   const service = useLoaderData();
-  console.log(service);
+
   const { img, title, description, price } = service;
-  console.log(img, title, description, price);
+
   return (
-    <div>
-      <div className="container ml-12 card w-96 bg-base-100 shadow-xl">
+    <div className="grid cap-8 lg:grid-cols-2">
+      <div className="container ml-12 card w-3/6 bg-base-100 shadow-xl">
         <figure>
           <img className="h-72" src={img} alt="Shoes" />
         </figure>
@@ -22,7 +24,9 @@ const Details = () => {
           </div>
         </div>
       </div>
-      <Review></Review>
+      <div className="w-5/6 mr-72" relative>
+        <Review service={service} key={service._id}></Review>
+      </div>
     </div>
   );
 };
