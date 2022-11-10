@@ -19,13 +19,13 @@ const router = createBrowserRouter([
         path: "/details/:id",
 
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/services/${params.id}`),
+          fetch(`https://y-snowy-ten.vercel.app/services/${params.id}`),
         element: <Details></Details>,
       },
       {
         path: "/services/details/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/services/${params.id}`),
+          fetch(`https://y-snowy-ten.vercel.app/services/${params.id}`),
         element: <Details></Details>,
       },
       { path: "/services", element: <Services></Services> },

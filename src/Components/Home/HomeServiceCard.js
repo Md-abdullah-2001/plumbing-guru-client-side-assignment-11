@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const HomeServiceCard = ({ service }) => {
   const { title, description, price, _id } = service;
-  console.log(_id);
+
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
       <figure>
