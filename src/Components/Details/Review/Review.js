@@ -1,12 +1,22 @@
-import React, { useContext } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Shared/Auth/AuthProvider";
 import ShowReviews from "./ShowReviews";
 
 const Review = ({ service }) => {
   console.log(service);
   const { user } = useContext(AuthContext);
-  const location = useLocation();
+  const [reviews, setReviews] = useState([]);
+  console.log(reviews);
+  useEffect(() => {
+    fetch(`http://localhost:5000/reviews?id=${service._id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setReviews(data);
+      });
+  }, [service._id]);
+  console.log(reviews);
+
   const submitPost = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -26,7 +36,7 @@ const Review = ({ service }) => {
       service_Name,
     };
     console.log(fullReview);
-    fetch(`https://y-snowy-ten.vercel.app/reviews`, {
+    fetch(`http://localhost:5000/reviews`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -34,15 +44,21 @@ const Review = ({ service }) => {
       body: JSON.stringify(fullReview),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data))
+      .then((data) => {
+        console.log(data);
+        const newReview = [...reviews, data];
+        setReviews(newReview);
+      })
       .catch((err) => console.log(err));
   };
   return (
     <div className="w-full flex justify-evenly mb-48">
       <div>
         <div className="relative">
-          <div className="container mx-auto ">
-            <ShowReviews service={service} key={service._id}></ShowReviews>
+          <div className="container mb-96 w-full grid grid-cols-2 gap-4    ">
+            {reviews.map((review) => (
+              <ShowReviews review={review} key={review._id}></ShowReviews>
+            ))}
           </div>
           <div className="fixed  right-0 bottom-0 z-30 w-48 lg:w-96  shadow-2xl bg-base-100">
             <form onSubmit={submitPost} className="card-body">

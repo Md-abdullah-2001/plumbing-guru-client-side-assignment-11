@@ -5,7 +5,7 @@ import Review from "./Review/Review";
 
 const Details = () => {
   const service = useLoaderData();
-
+  console.log(service);
   const { img, title, description, price } = service;
 
   return (

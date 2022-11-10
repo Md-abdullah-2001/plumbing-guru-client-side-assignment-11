@@ -1,105 +1,34 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../Shared/Auth/AuthProvider";
+import RrvTable from "./RrvTable";
 
 const MyReview = () => {
   const { user } = useContext(AuthContext);
+  const [myreviews, setMyreviews] = useState([]);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/reviews-email?email=${user.email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setMyreviews(data);
+      });
+  }, [user.email]);
+
   return (
     <div className="overflow-x-auto w-full container mx-auto">
-      <table className="table w-full">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Service</th>
-            <th>Review</th>
+      {/* <h1>{myreviews.length}</h1> */}
+      <thead>
+        <tr>
+          <th></th>
+          <th>Service</th>
+          <th>Review</th>
 
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>
-              <label>
-                <button>X</button>
-              </label>
-            </th>
-            <td>
-              <div className="flex items-center space-x-3">
-                <div>
-                  <div className="font-bold">Hart Hagerty</div>
-                </div>
-              </div>
-            </td>
-            <td>Zemlak, Daniel and Leannon</td>
-
-            <th>
-              <button className="btn btn-ghost btn-xs">Edit</button>
-            </th>
-          </tr>
-
-          <tr>
-            <th>
-              <label>
-                <button>X</button>
-              </label>
-            </th>
-            <td>
-              <div className="flex items-center space-x-3">
-                <div className="avatar"></div>
-                <div>
-                  <div className="font-bold">Brice Swyre</div>
-                </div>
-              </div>
-            </td>
-            <td>Carroll Group</td>
-
-            <th>
-              <button className="btn btn-ghost btn-xs">Edit</button>
-            </th>
-          </tr>
-
-          <tr>
-            <th>
-              <label>
-                <button>X</button>
-              </label>
-            </th>
-            <td>
-              <div className="flex items-center space-x-3">
-                <div className="avatar"></div>
-                <div>
-                  <div className="font-bold">Marjy Ferencz</div>
-                </div>
-              </div>
-            </td>
-            <td>Rowe-Schoen</td>
-
-            <th>
-              <button className="btn btn-ghost btn-xs">Edit</button>
-            </th>
-          </tr>
-
-          <tr>
-            <th>
-              <label>
-                <button>X</button>
-              </label>
-            </th>
-            <td>
-              <div className="flex items-center space-x-3">
-                <div className="avatar"></div>
-                <div>
-                  <div className="font-bold">Yancy Tear</div>
-                </div>
-              </div>
-            </td>
-            <td>Wyman-Ledner</td>
-
-            <th>
-              <button className="btn btn-ghost btn-xs">Edit</button>
-            </th>
-          </tr>
-        </tbody>
-      </table>
+          <th></th>
+        </tr>
+      </thead>
+      {myreviews.map((mrev) => (
+        <RrvTable mrev={mrev} key={mrev._id}></RrvTable>
+      ))}
     </div>
   );
 };

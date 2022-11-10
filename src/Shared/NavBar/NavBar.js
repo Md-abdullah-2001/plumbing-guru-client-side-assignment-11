@@ -18,7 +18,7 @@ const NavBar = () => {
         <Link to="/services">Services</Link>
       </li>
       <li className="mr-5 font-bold text-green-700">
-        <Link to="/blogs">Blogs</Link>
+        <Link to="/blog">Blogs</Link>
       </li>
       {user?.uid ? (
         <>
@@ -77,7 +77,7 @@ const NavBar = () => {
             >
               Logout
             </button>
-            <h4 className="mr-4">{user.displayName}</h4>
+
             <img
               className="w-12 h-12 mr-5 rounded-full"
               src={user.photoURL}

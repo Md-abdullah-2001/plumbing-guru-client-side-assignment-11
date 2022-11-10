@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import Blogs from "../Components/Blogs/Blogs";
 import Details from "../Components/Details/Details";
 import MyReview from "../Components/Details/Review/MyReview";
 import Home from "../Components/Home/Home";
@@ -16,14 +17,13 @@ const router = createBrowserRouter([
       {
         path: "/details/:id",
 
-        loader: ({ params }) =>
-          fetch(`https://y-snowy-ten.vercel.app/${params.id}`),
+        loader: ({ params }) => fetch(`http://localhost:5000/${params.id}`),
         element: <Details></Details>,
       },
       {
         path: "/services/details/:id",
         loader: ({ params }) =>
-          fetch(`https://y-snowy-ten.vercel.app/services/${params.id}`),
+          fetch(`http://localhost:5000/services/${params.id}`),
         element: <Details></Details>,
       },
       { path: "/services", element: <Services></Services> },
@@ -37,6 +37,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      { path: "/blog", element: <Blogs></Blogs> },
     ],
   },
 ]);

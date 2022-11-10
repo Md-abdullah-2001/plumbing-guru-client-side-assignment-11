@@ -5,7 +5,7 @@ import HomeServiceCard from "./HomeServiceCard";
 const HomeServices = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch(`https://y-snowy-ten.vercel.app/homeservices`)
+    fetch(`http://localhost:5000/homeservices`)
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
