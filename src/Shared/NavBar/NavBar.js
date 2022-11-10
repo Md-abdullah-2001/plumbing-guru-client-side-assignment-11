@@ -20,6 +20,17 @@ const NavBar = () => {
       <li className="mr-5 font-bold text-green-700">
         <Link to="/blogs">Blogs</Link>
       </li>
+      {user?.uid ? (
+        <>
+          {" "}
+          <li className="mr-5 font-bold text-green-700">
+            <Link to="/myreview">Add Service</Link>
+          </li>
+          <li className="mr-5 font-bold text-green-700">
+            <Link to="/myreview">My Reviews</Link>
+          </li>
+        </>
+      ) : null}
     </>
   );
   return (

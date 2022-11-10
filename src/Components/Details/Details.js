@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import React from "react";
+import { useLoaderData } from "react-router-dom";
 
 import Review from "./Review/Review";
-import ShowReviews from "./Review/ShowReviews";
 
 const Details = () => {
   const service = useLoaderData();

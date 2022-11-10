@@ -2,18 +2,23 @@ import React, { useEffect, useState } from "react";
 
 const ShowReviews = ({ service }) => {
   const [reviews, setReviews] = useState([]);
-  console.log(service._id);
+  // console.log(service._id);
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?id=${service._id}`)
+    fetch(`https://y-snowy-ten.vercel.app/reviews?id=${service._id}`)
       .then((res) => res.json())
-      .then((data) => setReviews(data));
-  }, [service?._id]);
+      .then((data) => {
+        setReviews(data);
+      });
+  }, [service._id]);
   console.log(reviews);
 
   return (
     <div className="mb-96 w-full grid grid-cols-2 gap-4  relative ">
       {reviews.map((review) => (
-        <div className="sticky-[90vh] top-8 p-5 w-72 h-24 bg-black  shadow-xl">
+        <div
+          key={review._id}
+          className="sticky-[90vh] top-8 p-5 w-72 h-24 bg-black  shadow-xl"
+        >
           <div className="flex gap-2 items-center">
             {" "}
             <img

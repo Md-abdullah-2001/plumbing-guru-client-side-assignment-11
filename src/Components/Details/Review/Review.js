@@ -14,11 +14,19 @@ const Review = ({ service }) => {
     const userName = user.displayName;
     const userImg = user.photoURL;
     const id = service._id;
+    const service_Name = service.title;
     const email = user.email;
     form.reset();
-    const fullReview = { userName, userImg, id, reviewText, email };
+    const fullReview = {
+      userName,
+      userImg,
+      id,
+      reviewText,
+      email,
+      service_Name,
+    };
     console.log(fullReview);
-    fetch(`http://localhost:5000/reviews`, {
+    fetch(`https://y-snowy-ten.vercel.app/reviews`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
