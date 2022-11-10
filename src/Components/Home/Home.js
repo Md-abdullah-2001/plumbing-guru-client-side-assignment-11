@@ -1,6 +1,7 @@
 import React from "react";
 import ContactNanner from "../ContactNanner/ContactBanner.js";
 import Hero from "../Hero/Hero";
+import Feature from "./Feature.js";
 import HomeServices from "./HomeServices";
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
       <Hero></Hero>
       <HomeServices></HomeServices>
       <ContactNanner></ContactNanner>
+      <Feature></Feature>
     </div>
   );
 };

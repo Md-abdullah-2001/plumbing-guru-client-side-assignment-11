@@ -1,20 +1,10 @@
 import React from "react";
+import { ToastContainer } from "react-toastify";
 
-const RrvTable = ({ mrev }) => {
+const RrvTable = ({ mrev, deleteReview }) => {
   const { service_Name, reviewText, _id } = mrev;
   console.log(_id);
-  const deleteReview = (id) => {
-    const process = window.confirm("You want to delete??");
-    if (process) {
-      fetch(`http://localhost:5000/reviews/${id}`, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-        });
-    }
-  };
+
   return (
     <div>
       <table className="table w-full">
@@ -22,7 +12,10 @@ const RrvTable = ({ mrev }) => {
           <tr>
             <th>
               <label>
-                <button onClick={() => deleteReview(_id)}>X</button>
+                <button onClick={() => deleteReview(_id)}>
+                  X
+                  <ToastContainer />
+                </button>
               </label>
             </th>
             <td>

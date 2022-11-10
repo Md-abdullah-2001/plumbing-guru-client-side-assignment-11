@@ -2,21 +2,21 @@ import React from "react";
 
 const ContactBanner = () => {
   return (
-    <div className="bg-cyan-400 container mx-auto flex justify-evenly mb-12 p-8">
-      <div>
-        <h1 className="text-3xl text-stone-800 text-center font-bold">
+    <div className="bg-cyan-400 container mx-auto lg:flex justify-evenly mb-12 p-8">
+      <div className="sm:text-center">
+        <h1 className="text-3xl text-stone-800 text-center  font-bold">
           My Mobile
         </h1>
-        <h4 className="text-2xl">+880177558899</h4>
+        <h4 className=" text-2xl">+880177558899</h4>
       </div>
-      <div>
-        <h1 className="text-3xl text-stone-800 text-center font-bold">
+      <div className="sm:text-center">
+        <h1 className=" text-3xl text-stone-800 text-center font-bold">
           My E-mail
         </h1>
-        <h4 className="text-2xl">example@gmail.com</h4>
+        <h4 className=" text-2xl">example@gmail.com</h4>
       </div>
-      <div>
-        <h1 className="text-3xl text-stone-800 text-center font-bold">
+      <div className="grid sm:grid-cols-1 lg:grid-cls-2">
+        <h1 className="  text-3xl text-stone-800 text-center font-bold">
           My Socials
         </h1>
         <div className="grid lg:grid-flow-col grid-flow-row gap-4">
