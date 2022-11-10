@@ -31,7 +31,7 @@ const HomeServiceCard = ({ service }) => {
         </p>
         <div className="card-actions justify-between">
           <h3 className="font-semibold">${price}</h3>
-          <Link to={`details/${_id}`}>
+          <Link to={`/details/${_id}`}>
             {" "}
             <button className="btn btn-primary">Details</button>
           </Link>

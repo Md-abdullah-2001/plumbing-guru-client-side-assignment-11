@@ -24,7 +24,7 @@ const NavBar = () => {
         <>
           {" "}
           <li className="mr-5 font-bold text-green-700">
-            <Link to="/myreview">Add Service</Link>
+            <Link to="/addnew">Add Service</Link>
           </li>
           <li className="mr-5 font-bold text-green-700">
             <Link to="/myreview">My Reviews</Link>

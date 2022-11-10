@@ -7,6 +7,7 @@ const Details = () => {
   const service = useLoaderData();
   console.log(service);
   const { img, title, description, price } = service;
+  console.log(title, description);
 
   return (
     <div className="grid cap-8 lg:grid-cols-2">
